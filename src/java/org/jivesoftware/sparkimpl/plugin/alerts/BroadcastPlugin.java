@@ -107,7 +107,6 @@ import org.jxmpp.util.XmppStringUtils;
 public class BroadcastPlugin extends SparkTabHandler implements Plugin, StanzaListener {
 
     private Set<ChatRoom> broadcastRooms = new HashSet<>();
-   
     public void initialize() {
         boolean enabled = Enterprise.containsFeature(Enterprise.BROADCAST_FEATURE);
         if (!enabled) {
