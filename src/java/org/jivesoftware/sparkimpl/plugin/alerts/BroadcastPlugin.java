@@ -29,20 +29,15 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.swing.AbstractAction;
@@ -553,8 +548,7 @@ public class BroadcastPlugin extends SparkTabHandler implements Plugin, StanzaLi
                if(e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                    try {
                        try {
-                           Log.error(e.getURL().toString());
-                           Desktop.getDesktop().browse(new URI(e.getURL().toString()));
+                          Desktop.getDesktop().browse(new URI(e.getURL().toString()));
                        } catch (IOException ex) {
                            Log.error(ex.getCause());
                        }
